@@ -13,6 +13,13 @@
 		66648DD31B32323C0013DA77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66648DD21B32323C0013DA77 /* Images.xcassets */; };
 		66648DD61B32323C0013DA77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66648DD41B32323C0013DA77 /* LaunchScreen.xib */; };
 		66648DE21B32323C0013DA77 /* AlgorithmsProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DE11B32323C0013DA77 /* AlgorithmsProjectTests.swift */; };
+		66648DED1B3233870013DA77 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DEC1B3233870013DA77 /* SearchResultsViewController.swift */; };
+		66648DEF1B3235B30013DA77 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DEE1B3235B30013DA77 /* Subject.swift */; };
+		66648DF31B3520560013DA77 /* NEUClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF21B3520560013DA77 /* NEUClass.swift */; };
+		66648DF61B3523E10013DA77 /* HttpDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF51B3523E10013DA77 /* HttpDataHandler.swift */; };
+		66648DF81B35B1A90013DA77 /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF71B35B1A90013DA77 /* MeetingTime.swift */; };
+		66648DFA1B35D0210013DA77 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF91B35D0210013DA77 /* Term.swift */; };
+		66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		66648DDB1B32323C0013DA77 /* AlgorithmsProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66648DE01B32323C0013DA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66648DE11B32323C0013DA77 /* AlgorithmsProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsProjectTests.swift; sourceTree = "<group>"; };
+		66648DEC1B3233870013DA77 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		66648DEE1B3235B30013DA77 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		66648DF21B3520560013DA77 /* NEUClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NEUClass.swift; sourceTree = "<group>"; };
+		66648DF51B3523E10013DA77 /* HttpDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpDataHandler.swift; sourceTree = "<group>"; };
+		66648DF71B35B1A90013DA77 /* MeetingTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTime.swift; sourceTree = "<group>"; };
+		66648DF91B35D0210013DA77 /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,9 @@
 		66648DC81B32323C0013DA77 /* AlgorithmsProject */ = {
 			isa = PBXGroup;
 			children = (
+				66648DF41B3523C70013DA77 /* DataHandler */,
+				66648DF01B351C530013DA77 /* Models */,
+				66648DEB1B3233230013DA77 /* ViewControllers */,
 				66648DCB1B32323C0013DA77 /* AppDelegate.swift */,
 				66648DCD1B32323C0013DA77 /* ViewController.swift */,
 				66648DCF1B32323C0013DA77 /* Main.storyboard */,
@@ -110,6 +127,34 @@
 				66648DE01B32323C0013DA77 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66648DEB1B3233230013DA77 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				66648DEC1B3233870013DA77 /* SearchResultsViewController.swift */,
+				66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		66648DF01B351C530013DA77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66648DEE1B3235B30013DA77 /* Subject.swift */,
+				66648DF21B3520560013DA77 /* NEUClass.swift */,
+				66648DF71B35B1A90013DA77 /* MeetingTime.swift */,
+				66648DF91B35D0210013DA77 /* Term.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		66648DF41B3523C70013DA77 /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				66648DF51B3523E10013DA77 /* HttpDataHandler.swift */,
+			);
+			name = DataHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66648DF61B3523E10013DA77 /* HttpDataHandler.swift in Sources */,
+				66648DF81B35B1A90013DA77 /* MeetingTime.swift in Sources */,
+				66648DEF1B3235B30013DA77 /* Subject.swift in Sources */,
+				66648DF31B3520560013DA77 /* NEUClass.swift in Sources */,
 				66648DCE1B32323C0013DA77 /* ViewController.swift in Sources */,
+				66648DFA1B35D0210013DA77 /* Term.swift in Sources */,
+				66648DED1B3233870013DA77 /* SearchResultsViewController.swift in Sources */,
+				66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */,
 				66648DCC1B32323C0013DA77 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +461,7 @@
 				66648DE71B32323C0013DA77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66648DE81B32323C0013DA77 /* Build configuration list for PBXNativeTarget "AlgorithmsProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +470,7 @@
 				66648DEA1B32323C0013DA77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
