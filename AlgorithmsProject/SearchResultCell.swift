@@ -9,21 +9,34 @@
 import UIKit
 
 class SearchResultCell: UICollectionViewCell {
+    var neuClass : NEUClass!;
     
-    var textLabel : UILabel!;
-    var imageView : UIImageView!;
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var crnLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var instructorLabel: UILabel!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame);
-        let textFrame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height);
-        textLabel = UILabel(frame: textFrame);
-        textLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize());
-        textLabel.textAlignment = .Center;
-        contentView.addSubview(textLabel);
     }
 
+    func setClass(neuClass : NEUClass) {
+        if (neuClass.title != nil) {
+            NSLog(neuClass.title!);
+            titleLabel.text = neuClass.title!;
+        }
+        if (neuClass.crn != nil) {
+            crnLabel.text = String(stringInterpolationSegment: neuClass.crn!)
+        }
+        if (neuClass.instructor != nil) {
+            instructorLabel.text = neuClass.instructor!
+        }
+    }
+    
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder);
     }
     
 }

@@ -10,32 +10,66 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
-    @IBAction func tabGestureWasPressed(sender: UITapGestureRecognizer) {
-        subjectPicker.hidden = true;
-    }
+
     @IBOutlet weak var seachButton: UIBarButtonItem!
-    @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet var subjectPicker : UIPickerView! = UIPickerView();
     @IBOutlet weak var subjectButton: UIButton!
+    @IBOutlet weak var instructorTextField: UITextField!
+    @IBOutlet weak var courseNumberTextField: UITextField!
+    @IBOutlet weak var crnTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var scheduleButton: UIBarButtonItem!
+    
+    var subjectEnums : [String] = [];
+    var neuSearchClass : NEUClass = NEUClass();
+    
     @IBAction func buttonTouched(sender: UIButton) {
         NSLog("Button touched");
         subjectPicker.hidden = false;
     }
     
+    @IBAction func uiTextFieldEditingDidEnd(sender: UITextField) {
+        sender.text = sender.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet());
+        
+        var value : String?;
+        
+        if (sender.text == "") {
+            value = nil;
+        } else {
+            value = sender.text;
+        }
+        
+        NSLog("TextView: \(value)");
+        
+        if (sender == instructorTextField) {
+            neuSearchClass.instructor = value;
+        } else if (sender == courseNumberTextField) {
+            neuSearchClass.courseNumber = value?.toInt();
+        } else if (sender == crnTextField) {
+            neuSearchClass.crn = value?.toInt();
+        } else if (sender == titleTextField) {
+            neuSearchClass.title = value;
+        }
+    }
+    
+    @IBAction func tabGestureWasPressed(sender: UITapGestureRecognizer) {
+        subjectPicker.hidden = true;
+        instructorTextField.endEditing(true);
+        courseNumberTextField.endEditing(true);
+    }
     @IBAction func seachButtonWasPressed(sender: UIBarButtonItem) {
         NSLog("Search button was pressed");
         performSegueWithIdentifier("searchResults", sender: self);
     }
     
-    var subjectEnums : [String] = [];
-    var neuSearchClass : NEUClass = NEUClass();
+
+    @IBAction func scheduleButtonPressed(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("showSchedule", sender: self);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("View did load");
         
-        // Do any additional setup after loading the view, typically from a nib.
-        subjectLabel.text = "Subject";
         subjectPicker.hidden = true;
         subjectPicker.delegate = self;
         subjectPicker.dataSource = self;
@@ -51,7 +85,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for s in iterateEnum(Subject) {
             subjectEnums.append(s.rawValue);
         }
-        
+
+        subjectPicker.selectRow(0, inComponent: 0, animated: true);
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,9 +107,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        subjectLabel.text = subjectEnums[row];
-        neuSearchClass.subject = Subject(rawValue: subjectLabel.text!);
-        println(neuSearchClass.subject?.rawValue);
+        subjectButton.setTitle(subjectEnums[row], forState: UIControlState.Normal);
+        neuSearchClass.subject = Subject(rawValue: subjectEnums[row]);
     }
     
     

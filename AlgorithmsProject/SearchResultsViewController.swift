@@ -22,7 +22,6 @@ class SearchResultsViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        searchResultsCollectionView.registerClass(SearchResultCell.self, forCellWithReuseIdentifier: cellReuseID);
         searchResultsCollectionView.delegate = self;
         searchResultsCollectionView.dataSource = self;
     }
@@ -41,7 +40,7 @@ class SearchResultsViewController: UICollectionViewController {
             indexPath) as! SearchResultCell;
         
         var neuClass = resultsList[indexPath.row];
-        cell.textLabel.text = neuClass.title;
+        cell.setClass(neuClass)
         
         return cell;
     }
@@ -54,12 +53,10 @@ class SearchResultsViewController: UICollectionViewController {
             }
         }
         
-        println(resultsList);
-        
+        // Run the update on the main thread
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsCollectionView.reloadData();
         });
-        
     }
     
 }

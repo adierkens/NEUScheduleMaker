@@ -10,9 +10,11 @@ import Foundation
 
 enum Term : String {
     case Fall = "Fall";
+    case ALL = "ALL";
 }
 
 enum Level : String {
     case Graduate = "Graduate";
     case Undergraduate = "Undergraduate";
+    case ALL = "ALL";
 }

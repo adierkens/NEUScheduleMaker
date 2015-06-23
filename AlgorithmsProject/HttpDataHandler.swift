@@ -28,9 +28,8 @@ class HttpDataHandler {
                 return;
             }
             
-            println("response=\(response)");
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding);
-            
+            NSLog("ResponseString: \(responseString)");
             var arrayOfDicts : NSMutableArray? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSMutableArray;
             if (arrayOfDicts != nil) {
                 delagate.onNewData(arrayOfDicts!);

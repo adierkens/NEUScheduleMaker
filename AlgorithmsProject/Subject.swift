@@ -9,6 +9,7 @@
 import Foundation
 
 enum Subject : String {
+    case ALL = "ALL";
     case ACCT = "ACCT";
     case AFRS = "AFRS";
     case AFAM = "AFAM";

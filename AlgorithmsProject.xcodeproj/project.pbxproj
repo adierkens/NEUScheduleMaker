@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		664708CF1B38CA7300DD8B6B /* ScheduleResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664708CE1B38CA7300DD8B6B /* ScheduleResultsViewController.swift */; };
 		66648DCC1B32323C0013DA77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DCB1B32323C0013DA77 /* AppDelegate.swift */; };
 		66648DCE1B32323C0013DA77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DCD1B32323C0013DA77 /* ViewController.swift */; };
 		66648DD11B32323C0013DA77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66648DCF1B32323C0013DA77 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 		66648DF81B35B1A90013DA77 /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF71B35B1A90013DA77 /* MeetingTime.swift */; };
 		66648DFA1B35D0210013DA77 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF91B35D0210013DA77 /* Term.swift */; };
 		66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */; };
+		66D283A91B38C57F0036E178 /* ScheduleGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D283A81B38C57F0036E178 /* ScheduleGeneratorViewController.swift */; };
+		66D4D8901B398E4B004DFF3C /* ScheduleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		664708CE1B38CA7300DD8B6B /* ScheduleResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleResultsViewController.swift; sourceTree = "<group>"; };
 		66648DC61B32323C0013DA77 /* AlgorithmsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgorithmsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66648DCA1B32323C0013DA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66648DCB1B32323C0013DA77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		66648DF71B35B1A90013DA77 /* MeetingTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTime.swift; sourceTree = "<group>"; };
 		66648DF91B35D0210013DA77 /* Term.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 		66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		66D283A81B38C57F0036E178 /* ScheduleGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleGeneratorViewController.swift; sourceTree = "<group>"; };
+		66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 			children = (
 				66648DEC1B3233870013DA77 /* SearchResultsViewController.swift */,
 				66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */,
+				66D283A81B38C57F0036E178 /* ScheduleGeneratorViewController.swift */,
+				664708CE1B38CA7300DD8B6B /* ScheduleResultsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				66648DF51B3523E10013DA77 /* HttpDataHandler.swift */,
+				66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */,
 			);
 			name = DataHandler;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 				66648DF61B3523E10013DA77 /* HttpDataHandler.swift in Sources */,
 				66648DF81B35B1A90013DA77 /* MeetingTime.swift in Sources */,
 				66648DEF1B3235B30013DA77 /* Subject.swift in Sources */,
+				66D4D8901B398E4B004DFF3C /* ScheduleHandler.swift in Sources */,
 				66648DF31B3520560013DA77 /* NEUClass.swift in Sources */,
+				664708CF1B38CA7300DD8B6B /* ScheduleResultsViewController.swift in Sources */,
 				66648DCE1B32323C0013DA77 /* ViewController.swift in Sources */,
+				66D283A91B38C57F0036E178 /* ScheduleGeneratorViewController.swift in Sources */,
 				66648DFA1B35D0210013DA77 /* Term.swift in Sources */,
 				66648DED1B3233870013DA77 /* SearchResultsViewController.swift in Sources */,
 				66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */,

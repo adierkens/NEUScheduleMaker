@@ -24,9 +24,63 @@ class NEUClass {
         
     }
     
+    private func addToJsonString(withKey : String, withValue : String) -> String {
+        var tmpJson : String = "";
+        tmpJson += "\"";
+        tmpJson += withKey;
+        tmpJson +=  "\" : \"" + withValue + "\"";
+        
+        return tmpJson;
+    }
+    
+    private func addToJsonString(withKey : String, withValue : Int) -> String {
+        return "\"" + withKey + "\" : " + String(withValue);
+    }
+    
     func toJsonString() -> String {
         let tmpString : String = self.subject!.rawValue;
-        return "{ \"subject\" : \"" + tmpString + "\" }";
+        var prefix : String = "";
+        
+        var jsonString = "{";
+        
+        if (self.subject != nil && self.subject != Subject.ALL) {
+            let subjectString : String = self.subject!.rawValue;
+            jsonString += addToJsonString("subject", withValue: subjectString);
+            prefix = ",";
+        }
+        
+        if (self.term != nil && self.term != Term.ALL) {
+            let termString : String = self.term!.rawValue;
+            jsonString += prefix;
+            jsonString += addToJsonString("term", withValue: termString);
+            prefix = ",";
+        }
+        
+        if (self.instructor != nil) {
+            jsonString += prefix;
+            jsonString += addToJsonString("instructor", withValue: self.instructor!);
+            prefix = ",";
+        }
+        
+        if (self.title != nil) {
+            jsonString += prefix;
+            jsonString += addToJsonString("title", withValue: self.title!);
+            prefix = ",";
+        }
+        
+        if (self.courseNumber != nil) {
+            jsonString += prefix;
+            jsonString += addToJsonString("courseNumber", withValue: self.courseNumber!);
+            prefix = ",";
+        }
+        
+        if (self.crn != nil) {
+            jsonString += prefix;
+            jsonString = addToJsonString("crn", withValue:self.crn!)
+        }
+        
+        jsonString += "}";
+        return jsonString;
     }
     
     init(jsonDict : NSDictionary) {
