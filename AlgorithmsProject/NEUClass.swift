@@ -8,6 +8,27 @@
 
 import Foundation
 
+func ==(lhs: NEUClassIndex, rhs: NEUClassIndex) -> Bool {
+    return true;
+}
+
+class NEUClassIndex : Hashable {
+    
+    private var subject : Subject;
+    private var courseNumber : Int;
+    
+    var hashValue : Int {
+        get {
+            return 1;
+        }
+    }
+    
+    init(subject : Subject, courseNumber : Int) {
+        self.subject = subject;
+        self.courseNumber = courseNumber;
+    }
+}
+
 class NEUClass {
     var term : Term?;
     var level : Level?;
@@ -19,6 +40,8 @@ class NEUClass {
     var subject : Subject?
     var courseNumber : Int?
     var meetingTimes : [MeetingTime]?
+    
+    
     
     init() {
         

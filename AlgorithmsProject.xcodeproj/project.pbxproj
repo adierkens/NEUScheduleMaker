@@ -23,6 +23,7 @@
 		66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */; };
 		66D283A91B38C57F0036E178 /* ScheduleGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D283A81B38C57F0036E178 /* ScheduleGeneratorViewController.swift */; };
 		66D4D8901B398E4B004DFF3C /* ScheduleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */; };
+		66EC0D721B3A1A6600F7A7BF /* ClassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC0D711B3A1A6600F7A7BF /* ClassFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		66648DFB1B35D36B0013DA77 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		66D283A81B38C57F0036E178 /* ScheduleGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleGeneratorViewController.swift; sourceTree = "<group>"; };
 		66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleHandler.swift; sourceTree = "<group>"; };
+		66EC0D711B3A1A6600F7A7BF /* ClassFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				66648DF21B3520560013DA77 /* NEUClass.swift */,
 				66648DF71B35B1A90013DA77 /* MeetingTime.swift */,
 				66648DF91B35D0210013DA77 /* Term.swift */,
+				66EC0D711B3A1A6600F7A7BF /* ClassFilter.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				66648DED1B3233870013DA77 /* SearchResultsViewController.swift in Sources */,
 				66648DFC1B35D36B0013DA77 /* SearchResultCell.swift in Sources */,
 				66648DCC1B32323C0013DA77 /* AppDelegate.swift in Sources */,
+				66EC0D721B3A1A6600F7A7BF /* ClassFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

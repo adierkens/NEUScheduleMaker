@@ -38,8 +38,6 @@ class Schedule {
         
     }
     
-}
-
     func getFilteredClasses() -> [NEUClass]{
         return [];
     }
@@ -51,13 +49,5 @@ class Schedule {
 
     func removeConflicts() {
     }
-    
-}
-
-class ClassFilter {
-    
-}
-
-class NEUClassIndex {
     
 }
