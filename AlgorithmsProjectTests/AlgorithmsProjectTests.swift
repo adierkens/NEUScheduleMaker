@@ -23,7 +23,31 @@ class AlgorithmsProjectTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        
+        class PrintResultsHandler : ScheduleResultsHandler {
+            
+            var stop = false;
+            
+            func onSchedulesFound(schedules : [Schedule]) {
+                print(schedules)
+                stop = true;
+            }
+        }
+        
+        var clsIndexes : [NEUClassIndex] = []
+        var clsFilters : [ClassFilter] = []
+        var handler = PrintResultsHandler()
+        
+        clsIndexes.append(NEUClassIndex(subject: Subject.ACCT, courseNumber: 4501))
+        clsIndexes.append(NEUClassIndex(subject: Subject.ACCT, courseNumber: 2301))
+        
+        var scheduleFinder = ScheduleFinder(clsIndexes: clsIndexes, filters : clsFilters)
+        scheduleFinder.findMatchingSchedules(handler)
+        
+        while !handler.stop {
+            
+        }
+
     }
     
     func testPerformanceExample() {

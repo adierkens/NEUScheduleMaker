@@ -371,10 +371,9 @@
         <!--Schedule Algorithm-->
         <scene sceneID="ynt-z3-91z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gyl-jK-XpO" customClass="ScheduleGeneratorViewController" customModule="AlgorithmsProject" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Juj-Y2-xBm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
@@ -385,6 +384,7 @@
                         <segue destination="SpP-nO-LLP" kind="show" identifier="showResults" id="JNK-DF-yci"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663" y="1055.25"/>
         </scene>

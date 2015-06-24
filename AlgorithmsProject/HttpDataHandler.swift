@@ -8,13 +8,21 @@
 
 import Foundation
 
-class HttpDataHandler {
+public protocol SearchResultsHandler {
+    func onNewData(clsArray : [NEUClass]);
+}
+
+public class HttpDataHandler {
     
-     class func startConnection(delagate : SearchResultsViewController, postData : String) {
+    public class func startConnection(delegate : SearchResultsHandler, matchClass : NEUClass) {
+        startConnection(delegate, postData: matchClass.toJsonString())
+    }
+    
+    public class func startConnection(delagate : SearchResultsHandler, postData : String) {
         let urlPath : String = "http://adamdierkens.com:9999"
         var url : NSURL = NSURL(string: urlPath)!;
         
-        println("POST: \(postData)");
+      //  println("POST: \(postData)");
         
         let request : NSMutableURLRequest = NSMutableURLRequest(URL: url);
         request.HTTPMethod = "POST";
@@ -29,10 +37,18 @@ class HttpDataHandler {
             }
             
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding);
-            NSLog("ResponseString: \(responseString)");
+            //NSLog("ResponseString: \(responseString)");
             var arrayOfDicts : NSMutableArray? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSMutableArray;
             if (arrayOfDicts != nil) {
-                delagate.onNewData(arrayOfDicts!);
+                
+                var resultsList : [NEUClass] = [];
+                
+                for item in arrayOfDicts! {
+                    if var dict = item as? NSMutableDictionary {
+                        resultsList.append(NEUClass(jsonDict: dict));
+                    }
+                }
+                delagate.onNewData(resultsList);
             }
             
         }

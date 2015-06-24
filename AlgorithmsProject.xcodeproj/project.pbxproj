@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663F79DC1B3A3B86007ED25D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F79DB1B3A3B86007ED25D /* Day.swift */; };
+		663F79DE1B3A3D19007ED25D /* MeetingTimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F79DD1B3A3D19007ED25D /* MeetingTimeType.swift */; };
+		663F79E81B3A66A3007ED25D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DEE1B3235B30013DA77 /* Subject.swift */; };
+		663F79E91B3A66A3007ED25D /* NEUClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF21B3520560013DA77 /* NEUClass.swift */; };
+		663F79EA1B3A66A3007ED25D /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF71B35B1A90013DA77 /* MeetingTime.swift */; };
+		663F79EB1B3A66A3007ED25D /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF91B35D0210013DA77 /* Term.swift */; };
+		663F79EC1B3A66A3007ED25D /* ClassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC0D711B3A1A6600F7A7BF /* ClassFilter.swift */; };
+		663F79ED1B3A66A3007ED25D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F79DB1B3A3B86007ED25D /* Day.swift */; };
+		663F79EE1B3A66A3007ED25D /* MeetingTimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F79DD1B3A3D19007ED25D /* MeetingTimeType.swift */; };
+		663F79EF1B3A66A8007ED25D /* HttpDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DF51B3523E10013DA77 /* HttpDataHandler.swift */; };
+		663F79F01B3A66A8007ED25D /* ScheduleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4D88F1B398E4B004DFF3C /* ScheduleHandler.swift */; };
 		664708CF1B38CA7300DD8B6B /* ScheduleResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664708CE1B38CA7300DD8B6B /* ScheduleResultsViewController.swift */; };
 		66648DCC1B32323C0013DA77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DCB1B32323C0013DA77 /* AppDelegate.swift */; };
 		66648DCE1B32323C0013DA77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66648DCD1B32323C0013DA77 /* ViewController.swift */; };
@@ -37,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		663F79DB1B3A3B86007ED25D /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		663F79DD1B3A3D19007ED25D /* MeetingTimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTimeType.swift; sourceTree = "<group>"; };
 		664708CE1B38CA7300DD8B6B /* ScheduleResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleResultsViewController.swift; sourceTree = "<group>"; };
 		66648DC61B32323C0013DA77 /* AlgorithmsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgorithmsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66648DCA1B32323C0013DA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +169,8 @@
 				66648DF71B35B1A90013DA77 /* MeetingTime.swift */,
 				66648DF91B35D0210013DA77 /* Term.swift */,
 				66EC0D711B3A1A6600F7A7BF /* ClassFilter.swift */,
+				663F79DB1B3A3B86007ED25D /* Day.swift */,
+				663F79DD1B3A3D19007ED25D /* MeetingTimeType.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -269,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663F79DC1B3A3B86007ED25D /* Day.swift in Sources */,
 				66648DF61B3523E10013DA77 /* HttpDataHandler.swift in Sources */,
 				66648DF81B35B1A90013DA77 /* MeetingTime.swift in Sources */,
+				663F79DE1B3A3D19007ED25D /* MeetingTimeType.swift in Sources */,
 				66648DEF1B3235B30013DA77 /* Subject.swift in Sources */,
 				66D4D8901B398E4B004DFF3C /* ScheduleHandler.swift in Sources */,
 				66648DF31B3520560013DA77 /* NEUClass.swift in Sources */,
@@ -289,7 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663F79ED1B3A66A3007ED25D /* Day.swift in Sources */,
+				663F79EA1B3A66A3007ED25D /* MeetingTime.swift in Sources */,
+				663F79EE1B3A66A3007ED25D /* MeetingTimeType.swift in Sources */,
+				663F79E81B3A66A3007ED25D /* Subject.swift in Sources */,
+				663F79EB1B3A66A3007ED25D /* Term.swift in Sources */,
+				663F79F01B3A66A8007ED25D /* ScheduleHandler.swift in Sources */,
 				66648DE21B32323C0013DA77 /* AlgorithmsProjectTests.swift in Sources */,
+				663F79EF1B3A66A8007ED25D /* HttpDataHandler.swift in Sources */,
+				663F79EC1B3A66A3007ED25D /* ClassFilter.swift in Sources */,
+				663F79E91B3A66A3007ED25D /* NEUClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

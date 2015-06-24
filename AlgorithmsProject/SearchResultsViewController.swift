@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultsViewController: UICollectionViewController {
+class SearchResultsViewController: UICollectionViewController, SearchResultsHandler {
     
     private let cellReuseID = "SearchCell";
     private lazy var resultsList : [NEUClass] = [];
@@ -45,14 +45,9 @@ class SearchResultsViewController: UICollectionViewController {
         return cell;
     }
     
-    func onNewData(jsonArray : NSArray) {
+    func onNewData(neuClasses : [NEUClass]) {
         NSLog("Got new data");
-        for item in jsonArray {
-            if var dict = item as? NSMutableDictionary {
-                resultsList.append(NEUClass(jsonDict: dict));
-            }
-        }
-        
+        self.resultsList = neuClasses
         // Run the update on the main thread
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsCollectionView.reloadData();

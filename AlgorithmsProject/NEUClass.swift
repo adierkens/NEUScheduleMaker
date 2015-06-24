@@ -8,18 +8,18 @@
 
 import Foundation
 
-func ==(lhs: NEUClassIndex, rhs: NEUClassIndex) -> Bool {
-    return true;
+public func ==(lhs: NEUClassIndex, rhs: NEUClassIndex) -> Bool {
+    return lhs.subject == rhs.subject && lhs.courseNumber == rhs.courseNumber;
 }
 
-class NEUClassIndex : Hashable {
+public class NEUClassIndex : Hashable {
     
     private var subject : Subject;
     private var courseNumber : Int;
     
-    var hashValue : Int {
+    public var hashValue : Int {
         get {
-            return 1;
+            return (subject.rawValue + String(courseNumber)).hashValue;
         }
     }
     
@@ -27,9 +27,31 @@ class NEUClassIndex : Hashable {
         self.subject = subject;
         self.courseNumber = courseNumber;
     }
+    
+    init?(neuClass : NEUClass) {
+        if neuClass.courseNumber != nil && neuClass.subject != nil {
+            self.subject = neuClass.subject!
+            self.courseNumber = neuClass.courseNumber!
+        } else {
+            self.subject = Subject.ALL;
+            self.courseNumber = 0;
+            return nil;
+        }
+    }
+    
+    func toNEUClass() -> NEUClass {
+        var neuCls = NEUClass();
+        neuCls.courseNumber = self.courseNumber;
+        neuCls.subject = self.subject;
+        return neuCls;
+    }
+    
+    func toJsonString() -> String {
+        return toNEUClass().toJsonString();
+    }
 }
 
-class NEUClass {
+public class NEUClass {
     var term : Term?;
     var level : Level?;
     var attributes : [String]?;
@@ -40,8 +62,6 @@ class NEUClass {
     var subject : Subject?
     var courseNumber : Int?
     var meetingTimes : [MeetingTime]?
-    
-    
     
     init() {
         
@@ -138,7 +158,17 @@ class NEUClass {
             self.courseNumber = jsonDict["courseNumber"] as? Int;
         }
         
-        // TODO: Implement Meeting times
+        if jsonDict["meetingTimes"] != nil {
+            self.meetingTimes = []
+            
+            let meetingTimes : NSArray = jsonDict["meetingTimes"] as! NSArray
+            
+            for var i=0; i<meetingTimes.count; i++ {
+                let meetingTime : NSDictionary = meetingTimes[i] as! NSDictionary;
+                self.meetingTimes?.append(MeetingTime(jsonDict: meetingTime))
+            }
+            
+        }
         
     }
 }
