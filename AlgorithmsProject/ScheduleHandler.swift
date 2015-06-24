@@ -26,10 +26,15 @@ public class Schedule {
     func add(neuClass : NEUClass) {
         self.selectedClasses.append(neuClass)
     }
+    
+    func size() -> Int {
+        return self.selectedClasses.count;
+    }
 }
 
 public protocol ScheduleResultsHandler {
     func onSchedulesFound(schedules : [Schedule]);
+    func newScheduleFound(schedule : Schedule);
 }
 
 class ScheduleFinder : SearchResultsHandler {
@@ -61,6 +66,7 @@ class ScheduleFinder : SearchResultsHandler {
         if (schedule.selectedClasses.count == classIndexes.count) {
             foundSchedules.append(schedule)
             resultsHandler?.onSchedulesFound(foundSchedules)
+            resultsHandler?.newScheduleFound(schedule)
             return
         }
         

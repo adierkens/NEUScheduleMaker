@@ -29,8 +29,15 @@ class AlgorithmsProjectTests: XCTestCase {
             var stop = false;
             
             func onSchedulesFound(schedules : [Schedule]) {
-                print(schedules)
+                println("Schedule count: \(schedules.count)")
+                for schedule in schedules {
+                    XCTAssertEqual(2, schedule.size(), "Schedule class size")
+                }
                 stop = true;
+            }
+            
+            func newScheduleFound(schedule: Schedule) {
+            
             }
         }
         
@@ -40,6 +47,8 @@ class AlgorithmsProjectTests: XCTestCase {
         
         clsIndexes.append(NEUClassIndex(subject: Subject.ACCT, courseNumber: 4501))
         clsIndexes.append(NEUClassIndex(subject: Subject.ACCT, courseNumber: 2301))
+        
+        clsFilters.append(DayFilter(day: Day.Monday))
         
         var scheduleFinder = ScheduleFinder(clsIndexes: clsIndexes, filters : clsFilters)
         scheduleFinder.findMatchingSchedules(handler)
