@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ScheduleGeneratorViewController: UITableViewController {
+class ScheduleGeneratorViewController: UIViewController {
 
+    @IBAction func searchButtonPressed(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("showResults", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

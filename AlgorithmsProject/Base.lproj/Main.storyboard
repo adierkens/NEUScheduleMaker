@@ -350,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="2378" y="317.25"/>
         </scene>
-        <!--Search Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="apP-sp-rOT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8nt-9r-91F" customClass="SearchNavigationController" customModule="AlgorithmsProject" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8nt-9r-91F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ndh-Ay-0LY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -371,41 +371,99 @@
         <!--Schedule Algorithm-->
         <scene sceneID="ynt-z3-91z">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gyl-jK-XpO" customClass="ScheduleGeneratorViewController" customModule="AlgorithmsProject" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Juj-Y2-xBm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ATa-tb-cLb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qfh-Mw-jlb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jmJ-8a-57E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
+                    </view>
                     <navigationItem key="navigationItem" title="Schedule Algorithm" id="rok-co-gzo">
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="2wW-qI-vHZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="2wW-qI-vHZ">
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="gyl-jK-XpO" id="e2o-96-o4S"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="SpP-nO-LLP" kind="show" identifier="showResults" id="JNK-DF-yci"/>
+                        <segue destination="kA4-fZ-Q8x" kind="show" identifier="showResults" id="vJP-3z-K3D"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663" y="1055.25"/>
         </scene>
-        <!--Schedule Results-->
-        <scene sceneID="ZDx-vO-2En">
+        <!--Schedule Results View Controller-->
+        <scene sceneID="05G-hY-oX7">
             <objects>
-                <viewController id="SpP-nO-LLP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scheduleResultsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jwQ-1T-lS5" customClass="ScheduleResultsViewController" customModule="AlgorithmsProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y4B-jm-PgF"/>
-                        <viewControllerLayoutGuide type="bottom" id="qfs-Km-krc"/>
+                        <viewControllerLayoutGuide type="top" id="NJK-bE-G1Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="d7i-DO-3aQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pjl-7F-p8y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="CPb-Vq-mDm">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-nb-OWU">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="285" width="106" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-S0-kxT">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="285" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zbV-UN-VUf">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="77" y="505" width="204" height="37"/>
+                                </variation>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3EI-nb-OWU"/>
+                                <exclude reference="pv0-S0-kxT"/>
+                                <exclude reference="zbV-UN-VUf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="3EI-nb-OWU"/>
+                                <include reference="pv0-S0-kxT"/>
+                                <include reference="zbV-UN-VUf"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Schedule Results" id="7wu-1d-4SY"/>
+                    <connections>
+                        <outlet property="pageControl" destination="zbV-UN-VUf" id="XtQ-zu-Yb8"/>
+                        <outlet property="pageNumLabel" destination="pv0-S0-kxT" id="sSA-rx-GZP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ug8-AY-3Y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8L-1G-Ab3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="1055.25"/>
+            <point key="canvasLocation" x="3049" y="1055.25"/>
+        </scene>
+        <!--Schedule Results Page View Controller-->
+        <scene sceneID="NmG-0o-b06">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXd-Uu-5e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="kA4-fZ-Q8x" customClass="ScheduleResultsPageViewController" customModule="AlgorithmsProject" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2418" y="1055.25"/>
         </scene>
     </scenes>
 </document>
