@@ -59,17 +59,16 @@ class ScheduleFinder : SearchResultsHandler {
 
     private func findMatches() {
         findMatches(Schedule())
+        resultsHandler?.onSchedulesFound(foundSchedules)
     }
     
     private func findMatches(schedule : Schedule) {
         
         if (schedule.selectedClasses.count == classIndexes.count) {
             foundSchedules.append(schedule)
-            resultsHandler?.onSchedulesFound(foundSchedules)
             resultsHandler?.newScheduleFound(schedule)
             return
         }
-        
         
         let nxtIndex : NEUClassIndex = allFilteredClassData.keys.array[schedule.selectedClasses.count];
         
@@ -80,7 +79,6 @@ class ScheduleFinder : SearchResultsHandler {
                 findMatches(Schedule(selectedClasses: tmpScheduleArray))
             }
         }
-        
     }
     
     private func getAllClassInstances() {
@@ -89,21 +87,15 @@ class ScheduleFinder : SearchResultsHandler {
         }
     }
     
-    internal func onNewData(neuClasses: [NEUClass]) {
-        
+    func onNewData(neuClasses: [NEUClass]) {
         NSLog("Got new data");
         
-        
-        if neuClasses.count == 0 {
-            return
-        }
+        if neuClasses.count == 0 { return }
         
         // Get the ClassIndex
         let neuIndex = NEUClassIndex(neuClass: neuClasses[0])
         
-        if (neuIndex == nil) {
-            return;
-        }
+        if (neuIndex == nil) { return }
         
         if self.allFilteredClassData[neuIndex!] == nil {
             self.allFilteredClassData[neuIndex!] = []
@@ -112,22 +104,13 @@ class ScheduleFinder : SearchResultsHandler {
         for neuClass in neuClasses {
             var shouldAddClass = true;
             for filter in self.classFilters {
-                
-                if !shouldAddClass {
-                    continue
-                }
-                
-                if filter.isFathomed(neuClass) {
-                    shouldAddClass = false;
-                }
+                if !shouldAddClass { continue }
+                if filter.isFathomed(neuClass) { shouldAddClass = false }
             }
             
-            if shouldAddClass {
-                self.allFilteredClassData[neuIndex!]?.append(neuClass)
-            }
+            if shouldAddClass { self.allFilteredClassData[neuIndex!]?.append(neuClass) }
         }
         
-        NSLog("FilteredClasses count \(self.allFilteredClassData.count)");
         if self.allFilteredClassData.count == classIndexes.count {
             findMatches()
         }
