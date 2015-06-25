@@ -49,6 +49,52 @@ class ScheduleResultsViewController: UIViewController {
     
     private func createGridViews() -> [UIView] {
         var subViews : [UIView] = []
+        var xVal = 0.0
+        var height = 20.0
+        var yVal = 0.0
+        var width = 40.25
+        var totalHeight : Double = Double(self.view.frame.size.height)
+        var totalWidth : Double = Double(self.view.frame.size.width) - 40.0
+        var navBarSize = 44.0
+        
+        if (self.navigationController != nil) {
+            navBarSize = Double(self.navigationController!.navigationBar.frame.size.height)
+            totalHeight -= navBarSize
+        }
+        
+        var sizeOfHour = ((totalHeight - 10) / 12);
+        var firstHour = navBarSize + sizeOfHour - 15;
+        
+        for hour in 8...17 {
+            yVal = firstHour + (sizeOfHour * (Double(hour) - 7.0))
+            
+            var hourTextView = UITextView(frame: CGRect(x: xVal, y: yVal - 15, width: width, height: height));
+            hourTextView.editable = false;
+            
+            var hourText = String(format: "%ld:00", hour)
+            
+            if (hour > 12) {
+                hourText = String(format: "%ld:00", hour-12)
+            }
+            
+            hourTextView.text = hourText
+            subViews.append(hourTextView)
+        }
+        
+        yVal = firstHour
+        width = 40
+        height = 20
+        xVal = 50
+        var count = 0
+        
+        for day in ["Mon", "Tues", "Wed", "Thur", "Fri"] {
+            var dayTextView = UITextView(frame: CGRect(x: xVal + ((totalWidth - 10) / 5) * Double(count), y: yVal, width: width, height: height))
+            dayTextView.text = day
+            dayTextView.editable = false
+            subViews.append(dayTextView)
+            count++
+        }
+        
         
         return subViews;
     }
@@ -56,16 +102,18 @@ class ScheduleResultsViewController: UIViewController {
     private func createClassSubViews() -> [UIView] {
         var subViews : [UIView] = []
         var totalHeight = Int(self.view.frame.size.height)
-        var navBarSize = 0
+        var navBarSize = 44
         
         if (self.navigationController != nil) {
             navBarSize = Int(self.navigationController!.navigationBar.frame.size.height)
+            NSLog("Navbar: \(navBarSize)")
             totalHeight -= navBarSize;
         }
         
-        var totalWidth : Int = Int(self.view.frame.size.width);
+        var totalWidth : Int = Int(self.view.frame.size.width) - 45;
         var sizeOfHour = ((totalHeight - 10) / 12);
-        
+        var firstHour = navBarSize + sizeOfHour - 15;
+
         
         for cls in schedule.selectedClasses {
             var clsColor = getColorForClass(cls);
@@ -85,9 +133,8 @@ class ScheduleResultsViewController: UIViewController {
                     var endY = getYForTime(mtn.endTime!);
                     var mtnHeight = Int(Float(sizeOfHour) * (endY - startY))
                     
-                    var yVal = navBarSize + sizeOfHour * Int((startY - 7))
+                    var yVal = firstHour + sizeOfHour * Int((startY - 7))
 
-                    
                     for day in mtn.days! {
                         let xVal = getXForDay(day);
 
@@ -112,7 +159,7 @@ class ScheduleResultsViewController: UIViewController {
     }
     
     func handleClassTap(recognizer: UITapGestureRecognizer) {
-        NSLog("Class Tapped");
+        NSLog("Class Tapped")
     }
     
     private func getXForDay(day : Day) -> Int {
@@ -120,7 +167,7 @@ class ScheduleResultsViewController: UIViewController {
         var factor = 1;
         
         if day == .Monday {
-            return 10;
+            factor = 0
         } else if day == .Wednesday {
             factor = 2;
         } else if day == .Thursday {
@@ -129,7 +176,7 @@ class ScheduleResultsViewController: UIViewController {
             factor = 4
         }
         
-        return ((totalWidth - 10)/5) * factor;
+        return 40 + (((totalWidth - 10)/5) * factor);
     }
     
     private func getYForTime(date : NSDate) -> Float {
@@ -147,7 +194,7 @@ class ScheduleResultsViewController: UIViewController {
     }
     
     private func getColorForClass(neuClass : NEUClass) -> UIColor {
-        return UIColor.blackColor();
+        return UIColor.grayColor();
     }
     
 }
