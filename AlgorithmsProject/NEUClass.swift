@@ -49,6 +49,10 @@ public class NEUClassIndex : Hashable {
     func toJsonString() -> String {
         return toNEUClass().toJsonString();
     }
+    
+    func toString() -> String {
+        return "\(subject.rawValue) \(courseNumber)"
+    }
 }
 
 public class NEUClass {

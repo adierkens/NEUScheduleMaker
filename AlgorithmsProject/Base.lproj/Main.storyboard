@@ -24,6 +24,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="200" y="84" width="122" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="85" width="122" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="buttonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="InO-fB-zsC"/>
                                 </connections>
@@ -36,6 +39,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="114" y="88" width="63" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="129" y="89" width="63" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructor" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr3-cL-ctD">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -44,6 +50,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="103" y="126" width="74" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="118" y="127" width="74" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af1-VV-dZj">
@@ -54,6 +63,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="49" y="165" width="128" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="64" y="166" width="128" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOc-kz-q8D">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -62,6 +74,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="135" y="203" width="42" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="150" y="204" width="42" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-p2-ttq">
@@ -72,6 +87,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="135" y="241" width="42" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="150" y="242" width="42" height="21"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instructor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUh-av-0QD">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -79,6 +97,9 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="200" y="122" width="122" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="123" width="122" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="48N-b9-CL7"/>
@@ -91,6 +112,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="200" y="161" width="122" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="162" width="122" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="ve0-3Z-5WK"/>
                                 </connections>
@@ -101,6 +125,9 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="200" y="199" width="122" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="200" width="122" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="3pV-Up-2K4"/>
@@ -113,6 +140,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="200" y="237" width="122" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="238" width="122" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="3gZ-Vi-mcW"/>
                                 </connections>
@@ -124,6 +154,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-100" y="438" width="600" height="162"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-100" y="512" width="600" height="162"/>
                                 </variation>
                             </pickerView>
                         </subviews>
@@ -371,16 +404,349 @@
         <!--Schedule Algorithm-->
         <scene sceneID="ynt-z3-91z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gyl-jK-XpO" customClass="ScheduleGeneratorViewController" customModule="AlgorithmsProject" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ATa-tb-cLb"/>
                         <viewControllerLayoutGuide type="bottom" id="qfh-Mw-jlb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jmJ-8a-57E">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-hg-hEb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseCell" textLabel="h6a-8o-9IX" style="IBUITableViewCellStyleDefault" id="mUw-tf-lX1">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUw-tf-lX1" id="rnX-Om-msV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6a-8o-9IX">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="333"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="333"/>
+                                </variation>
+                            </tableView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4NG-2r-1zK">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="475" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="451" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="switched:" destination="gyl-jK-XpO" eventType="valueChanged" id="8vB-Jm-oSL"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Friday Class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-eS-iyw">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="192" y="480" width="122" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="456" width="122" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1R0-dL-TA4">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="514" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="490" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="switched:" destination="gyl-jK-XpO" eventType="valueChanged" id="aHS-pc-1gw"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Class Before: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxO-wz-E5O">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="192" y="519" width="135" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="495" width="135" height="21"/>
+                                </variation>
+                            </label>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-ue-NFj">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="456865034.69649899">
+                                    <!--2015-06-24 18:57:14 +0000-->
+                                </date>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="638" width="600" height="162"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="567" width="400" height="162"/>
+                                </variation>
+                                <connections>
+                                    <action selector="dateChanged:" destination="gyl-jK-XpO" eventType="valueChanged" id="ezw-uW-dC6"/>
+                                </connections>
+                            </datePicker>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fzg-R3-PbA">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="553" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="529" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="switched:" destination="gyl-jK-XpO" eventType="valueChanged" id="flO-NA-fpF"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Class After: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-cR-Zkk">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="192" y="558" width="121" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="534" width="121" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUm-44-dmy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="9:00 AM">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="351" y="514" width="56" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="285" y="490" width="99" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="timePressed:" destination="gyl-jK-XpO" eventType="touchUpInside" id="2wA-zG-yh0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Z-gv-oSA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="5:00 PM">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="351" y="553" width="57" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="285" y="529" width="99" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="timePressed:" destination="gyl-jK-XpO" eventType="touchUpInside" id="tJU-AW-8Ps"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNF-F2-6aC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="+" id="wcn-PN-GAu">
+                                        <connections>
+                                            <action selector="addClassIndex:" destination="gyl-jK-XpO" id="3qV-LX-fZV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="397" width="600" height="44"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="397" width="400" height="44"/>
+                                </variation>
+                            </toolbar>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7g-KI-EjL">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-7" y="567" width="400" height="162"/>
+                                </variation>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekm-Zh-CRe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHV-ef-FDH">
+                                        <rect key="frame" x="85" y="121" width="53" height="30"/>
+                                        <state key="normal" title="ALL">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="200" y="84" width="122" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="166" y="67" width="122" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="subjectButtonPressed:" destination="gyl-jK-XpO" eventType="touchUpInside" id="O2n-W3-9x4"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJY-mE-ALl">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="114" y="88" width="63" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="80" y="71" width="63" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNg-OE-l6H">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="49" y="165" width="128" height="21"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="33" y="109" width="128" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-wp-XnB">
+                                        <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="200" y="161" width="122" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="184" y="105" width="122" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="FSC-XM-ukZ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtv-bh-fhK">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="169" y="209" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="gyl-jK-XpO" eventType="touchUpInside" id="Ov8-aL-08p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18X-4H-gLw">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="161" y="247" width="48" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="gyl-jK-XpO" eventType="touchUpInside" id="v5c-K7-egp"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-mC-QFf">
+                                        <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="200" y="161" width="122" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="184" y="105" width="122" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="uiTextFieldEditingDidEnd:" destination="gyl-jK-XpO" eventType="editingDidEnd" id="JbR-Nx-Au8"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="KHV-ef-FDH"/>
+                                        <exclude reference="NJY-mE-ALl"/>
+                                        <exclude reference="HNg-OE-l6H"/>
+                                        <exclude reference="JNh-wp-XnB"/>
+                                        <exclude reference="rtv-bh-fhK"/>
+                                        <exclude reference="18X-4H-gLw"/>
+                                        <exclude reference="ZpS-mC-QFf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="76" width="400" height="310"/>
+                                    <mask key="subviews">
+                                        <include reference="KHV-ef-FDH"/>
+                                        <include reference="NJY-mE-ALl"/>
+                                        <include reference="HNg-OE-l6H"/>
+                                        <include reference="JNh-wp-XnB"/>
+                                        <include reference="rtv-bh-fhK"/>
+                                        <include reference="18X-4H-gLw"/>
+                                        <include reference="ZpS-mC-QFf"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nSa-hg-hEb"/>
+                                <exclude reference="4NG-2r-1zK"/>
+                                <exclude reference="0fs-eS-iyw"/>
+                                <exclude reference="1R0-dL-TA4"/>
+                                <exclude reference="xxO-wz-E5O"/>
+                                <exclude reference="lEb-ue-NFj"/>
+                                <exclude reference="Fzg-R3-PbA"/>
+                                <exclude reference="aVI-cR-Zkk"/>
+                                <exclude reference="MUm-44-dmy"/>
+                                <exclude reference="j0Z-gv-oSA"/>
+                                <exclude reference="oNF-F2-6aC"/>
+                                <exclude reference="O7g-KI-EjL"/>
+                                <exclude reference="ekm-Zh-CRe"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="nSa-hg-hEb"/>
+                                <include reference="4NG-2r-1zK"/>
+                                <include reference="0fs-eS-iyw"/>
+                                <include reference="1R0-dL-TA4"/>
+                                <include reference="xxO-wz-E5O"/>
+                                <include reference="lEb-ue-NFj"/>
+                                <include reference="Fzg-R3-PbA"/>
+                                <include reference="aVI-cR-Zkk"/>
+                                <include reference="MUm-44-dmy"/>
+                                <include reference="j0Z-gv-oSA"/>
+                                <include reference="oNF-F2-6aC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="O7g-KI-EjL"/>
+                                <include reference="ekm-Zh-CRe"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vDF-ak-jhD" appends="YES" id="BUn-o6-lDy"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule Algorithm" id="rok-co-gzo">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="2wW-qI-vHZ">
@@ -390,11 +756,33 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addClassButton" destination="wcn-PN-GAu" id="Q1q-FS-S6x"/>
+                        <outlet property="addClassView" destination="ekm-Zh-CRe" id="bvV-xd-hHN"/>
+                        <outlet property="classTableView" destination="nSa-hg-hEb" id="UIE-Tw-Q2A"/>
+                        <outlet property="courseNumberTextField" destination="ZpS-mC-QFf" id="b1j-ai-Y0O"/>
+                        <outlet property="noClassAfterLabel" destination="aVI-cR-Zkk" id="Yg1-Zg-n9j"/>
+                        <outlet property="noClassAfterSwitch" destination="Fzg-R3-PbA" id="aF4-wr-bnv"/>
+                        <outlet property="noClassBeforeLabel" destination="xxO-wz-E5O" id="HAS-2E-bVq"/>
+                        <outlet property="noClassBeforeSwitch" destination="1R0-dL-TA4" id="3YB-3h-ZhJ"/>
+                        <outlet property="noFridayClassLabel" destination="0fs-eS-iyw" id="K93-7F-Jh0"/>
+                        <outlet property="noFridayClassSwitch" destination="4NG-2r-1zK" id="y4c-4p-yZL"/>
+                        <outlet property="searchButton" destination="2wW-qI-vHZ" id="Chf-Hi-Pbf"/>
+                        <outlet property="subjectButton" destination="KHV-ef-FDH" id="ciC-Ha-WBu"/>
+                        <outlet property="subjectPickerView" destination="O7g-KI-EjL" id="yry-ac-D0b"/>
+                        <outlet property="timeAfterButton" destination="j0Z-gv-oSA" id="EfA-A8-gtO"/>
+                        <outlet property="timeBeforeButton" destination="MUm-44-dmy" id="OX4-zh-uU2"/>
+                        <outlet property="timePicker" destination="lEb-ue-NFj" id="1XG-rD-oMR"/>
                         <segue destination="kA4-fZ-Q8x" kind="show" identifier="showResults" id="vJP-3z-K3D"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-iZ-ZnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vDF-ak-jhD">
+                    <connections>
+                        <action selector="tapPressed:" destination="gyl-jK-XpO" id="9vo-ih-og0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1663" y="1055.25"/>
+            <point key="canvasLocation" x="1662" y="1050.75"/>
         </scene>
         <!--Schedule Results View Controller-->
         <scene sceneID="05G-hY-oX7">
@@ -405,12 +793,13 @@
                         <viewControllerLayoutGuide type="bottom" id="d7i-DO-3aQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CPb-Vq-mDm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-nb-OWU">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="126" y="285" width="106" height="21"/>
@@ -419,7 +808,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-S0-kxT">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="279" y="285" width="42" height="21"/>
@@ -432,7 +821,7 @@
                                 </variation>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="3EI-nb-OWU"/>
@@ -460,8 +849,8 @@
         <!--Schedule Results Page View Controller-->
         <scene sceneID="NmG-0o-b06">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bXd-Uu-5e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="kA4-fZ-Q8x" customClass="ScheduleResultsPageViewController" customModule="AlgorithmsProject" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXd-Uu-5e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2418" y="1055.25"/>
         </scene>

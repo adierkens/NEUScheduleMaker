@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
-    
-
+class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate , UIPickerViewDataSource {
+    var subjectStrings : [String]?
     @IBOutlet weak var seachButton: UIBarButtonItem!
-    @IBOutlet var subjectPicker : UIPickerView! = UIPickerView();
+    @IBOutlet var subjectPicker : UIPickerView!;
     @IBOutlet weak var subjectButton: UIButton!
     @IBOutlet weak var instructorTextField: UITextField!
     @IBOutlet weak var courseNumberTextField: UITextField!
@@ -38,8 +37,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             value = sender.text;
         }
-        
-        NSLog("TextView: \(value)");
         
         if (sender == instructorTextField) {
             neuSearchClass.instructor = value;
@@ -70,6 +67,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.subjectStrings = []
+        
+        for s in iterateEnum(Subject) {
+            self.subjectStrings!.append(s.rawValue);
+        }
+        
         subjectPicker.hidden = true;
         subjectPicker.delegate = self;
         subjectPicker.dataSource = self;
@@ -80,54 +83,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         toolbar.barStyle = UIBarStyle.Default;
         toolbar.translucent = true;
         toolbar.sizeToFit();
-        
-        
-        for s in iterateEnum(Subject) {
-            subjectEnums.append(s.rawValue);
-        }
-
-        subjectPicker.selectRow(0, inComponent: 0, animated: true);
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func numberOfComponentsInPickerView(_pickerView: UIPickerView) -> Int {
-        return 1;
-    }
-
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return subjectEnums.count;
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return subjectEnums[row];
-    }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         subjectButton.setTitle(subjectEnums[row], forState: UIControlState.Normal);
         neuSearchClass.subject = Subject(rawValue: subjectEnums[row]);
-    }
-    
-    
-    func iterateEnum<T: Hashable>(_: T.Type) -> GeneratorOf<T> {
-        var cast: (Int -> T)!
-        switch sizeof(T) {
-        case 0: return GeneratorOf(GeneratorOfOne(unsafeBitCast((), T.self)))
-        case 1: cast = { unsafeBitCast(UInt8(truncatingBitPattern: $0), T.self) }
-        case 2: cast = { unsafeBitCast(UInt16(truncatingBitPattern: $0), T.self) }
-        case 4: cast = { unsafeBitCast(UInt32(truncatingBitPattern: $0), T.self) }
-        case 8: cast = { unsafeBitCast(UInt64($0), T.self) }
-        default: fatalError("cannot be here")
-        }
-        
-        var i = 0
-        return GeneratorOf {
-            let next = cast(i)
-            return next.hashValue == i++ ? next : nil
-        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -136,6 +101,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             HttpDataHandler.startConnection(viewController, postData: neuSearchClass.toJsonString());
         }
+    }
+    
+    func numberOfComponentsInPickerView(_pickerView: UIPickerView) -> Int {
+        return 1;
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.subjectStrings!.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return self.subjectStrings![row];
+    }
+    
+    func subjectAtIndex(index: Int) -> Subject? {
+        
+        if (index < 0 || index >= subjectStrings!.count) {
+            return nil;
+        }
+        
+        let str = subjectStrings![index];
+        return Subject(rawValue: str)
     }
 }
 

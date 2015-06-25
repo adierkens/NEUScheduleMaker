@@ -7,6 +7,26 @@
 //
 
 import Foundation
+import UIKit
+    
+    func iterateEnum<T: Hashable>(_: T.Type) -> GeneratorOf<T> {
+        var cast: (Int -> T)!
+        switch sizeof(T) {
+        case 0: return GeneratorOf(GeneratorOfOne(unsafeBitCast((), T.self)))
+        case 1: cast = { unsafeBitCast(UInt8(truncatingBitPattern: $0), T.self) }
+        case 2: cast = { unsafeBitCast(UInt16(truncatingBitPattern: $0), T.self) }
+        case 4: cast = { unsafeBitCast(UInt32(truncatingBitPattern: $0), T.self) }
+        case 8: cast = { unsafeBitCast(UInt64($0), T.self) }
+        default: fatalError("cannot be here")
+        }
+        
+        var i = 0
+        return GeneratorOf {
+            let next = cast(i)
+            return next.hashValue == i++ ? next : nil
+        }
+    }
+
 
 enum Subject : String {
     case ALL = "ALL";

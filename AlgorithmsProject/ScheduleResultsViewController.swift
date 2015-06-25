@@ -11,6 +11,8 @@ import UIKit
 class ScheduleResultsViewController: UIViewController {
 
     var pageIndex : Int?
+    var pageCount : Int?
+    var schedule : Schedule?
     
     @IBOutlet weak var pageNumLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -20,13 +22,24 @@ class ScheduleResultsViewController: UIViewController {
         // Do view setup here.
         if (pageIndex != nil) {
             pageNumLabel.text = String(pageIndex!);
-            pageControl.numberOfPages = 5;
+            pageControl.numberOfPages = pageCount!;
             pageControl.currentPage = pageIndex!;
+        }
+        
+        if self.schedule != nil {
+            loadScheduleView()
         }
     }
     
-    func setPageNum(pg : Int) {
-        pageIndex = pg;
+    func loadScheduleView() {
+        
+        if self.schedule == nil {
+            return;
+        }
+        
+        
+        
+        
     }
     
 }

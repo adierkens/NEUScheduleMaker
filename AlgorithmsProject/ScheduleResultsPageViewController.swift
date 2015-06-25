@@ -48,20 +48,21 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
 
     func viewControllerAtIndex(index : Int) -> UIViewController? {
         
-        if (index < 0 || index >= 5) {
+        if (index < 0 || index >= allSchedules!.count) {
             return nil;
         }
         
         let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("scheduleResultsViewController") as! ScheduleResultsViewController;
-        pageContentViewController.setPageNum(index);
+        pageContentViewController.pageIndex = index;
+        pageContentViewController.pageCount = allSchedules!.count
         return pageContentViewController
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 5
+        return allSchedules!.count;
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 5;
+        return 0;
     }
 }
