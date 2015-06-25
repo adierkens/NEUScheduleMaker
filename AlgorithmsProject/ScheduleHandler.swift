@@ -9,7 +9,7 @@
 import Foundation
 
 public class Schedule {
-    private var selectedClasses : [NEUClass]
+    var selectedClasses : [NEUClass]
     
     init() {
         self.selectedClasses = []

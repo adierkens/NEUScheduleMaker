@@ -11,14 +11,14 @@ import UIKit
 class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, ScheduleResultsHandler {
 
     private var currentPageIndex : Int!;
-    private var allSchedules : [Schedule]?
+    private var allSchedules : [Schedule]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentPageIndex = 0;
         allSchedules = []
                 
-        self.setViewControllers([], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
+        self.setViewControllers([], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
         self.delegate = self
         self.dataSource = self
     }
@@ -44,7 +44,7 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
         dispatch_async(dispatch_get_main_queue(), {
             self.dataSource = nil;
             self.dataSource = self;
-            self.setViewControllers([self.viewControllerAtIndex(self.currentPageIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
+            self.setViewControllers([self.viewControllerAtIndex(self.currentPageIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
         });
         
     }
@@ -70,6 +70,7 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
         let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("scheduleResultsViewController") as! ScheduleResultsViewController;
         pageContentViewController.pageIndex = index;
         pageContentViewController.pageCount = allSchedules!.count
+        pageContentViewController.schedule = allSchedules[index];
         return pageContentViewController
     }
     

@@ -49,7 +49,6 @@ class MeetingTime {
                 let day : Day = Day(rawValue: tmpString)!;
                 self.days!.append(day);
             }
-            
         }
         
         if jsonDict["where"] != nil {
