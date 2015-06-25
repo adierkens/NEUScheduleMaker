@@ -17,8 +17,10 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
         super.viewDidLoad()
         currentPageIndex = 0;
         allSchedules = []
-                
-        self.setViewControllers([], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
+        
+        let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("scheduleResultsViewController") as! ScheduleResultsViewController;
+        
+        self.setViewControllers([pageContentViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
         self.delegate = self
         self.dataSource = self
     }
@@ -46,7 +48,6 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
             self.dataSource = self;
             self.setViewControllers([self.viewControllerAtIndex(self.currentPageIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil);
         });
-        
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
@@ -62,7 +63,6 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
     }
 
     func viewControllerAtIndex(index : Int) -> UIViewController? {
-        
         if (index < 0 || index >= allSchedules!.count) {
             return nil;
         }

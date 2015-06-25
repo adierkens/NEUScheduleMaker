@@ -47,14 +47,66 @@ public class DayFilter : ClassFilter {
 
 public class BeforeTimeFilter : ClassFilter {
     
+    var date : NSDate
+    
+    init(nsDate : NSDate) {
+        date = nsDate;
+    }
+    
     public func isFathomed(neuClass: NEUClass) -> Bool {
-        return true;
+        
+        if neuClass.meetingTimes == nil {
+            return false;
+        }
+        
+        for mt in neuClass.meetingTimes! {
+            
+            if mt.type != MeetingTimeType.Class {
+                continue
+            }
+            
+            if mt.startTime == nil {
+                continue
+            }
+            
+            if mt.startTime!.timeIntervalSince1970 < date.timeIntervalSince1970 {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
 }
 
 public class AfterTimeFilter : ClassFilter {
+    
+    var date : NSDate;
+    
+    init(nsDate : NSDate) {
+        date = nsDate;
+    }
+    
     public func isFathomed(neuClass: NEUClass) -> Bool {
-        return true;
+        if neuClass.meetingTimes == nil {
+            return false;
+        }
+        
+        for mt in neuClass.meetingTimes! {
+            
+            if mt.type != MeetingTimeType.Class {
+                continue
+            }
+            
+            if mt.endTime == nil {
+                continue
+            }
+            
+            if mt.endTime!.timeIntervalSince1970 > date.timeIntervalSince1970 {
+                return true;
+            }
+        }
+        
+        return false;
     }
 }

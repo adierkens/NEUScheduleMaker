@@ -55,7 +55,11 @@ public class NEUClassIndex : Hashable {
     }
 }
 
-public class NEUClass {
+public func ==(lhs: NEUClass, rhs: NEUClass) -> Bool {
+    return NEUClassIndex(neuClass: lhs) == NEUClassIndex(neuClass: rhs);
+}
+
+public class NEUClass : Equatable {
     var term : Term?;
     var level : Level?;
     var attributes : [String]?;
@@ -123,7 +127,7 @@ public class NEUClass {
         
         if (self.crn != nil) {
             jsonString += prefix;
-            jsonString = addToJsonString("crn", withValue:self.crn!)
+            jsonString += addToJsonString("crn", withValue:self.crn!)
         }
         
         jsonString += "}";
@@ -174,5 +178,61 @@ public class NEUClass {
             
         }
         
+    }
+    
+    func conflicts(neuClass: NEUClass) -> Bool {
+        
+        if (self.meetingTimes == nil || neuClass.meetingTimes == nil) {
+            return false;
+        }
+        
+        
+        for sMeetingTime in self.meetingTimes! {
+            for tMeetingTime in neuClass.meetingTimes! {
+                
+                // We only care about Class meetings for now
+                
+                if (sMeetingTime.type != MeetingTimeType.Class || tMeetingTime.type != MeetingTimeType.Class) {
+                    continue;
+                }
+                
+                if sMeetingTime.days == nil || tMeetingTime.days == nil {
+                    continue;
+                }
+                
+                // Check if any of the days overlap
+                
+                var shouldSkip = true;
+                
+                
+                for d in sMeetingTime.days! {
+                    if contains(tMeetingTime.days!, d) {
+                        shouldSkip = false;
+                    }
+                }
+                
+                if shouldSkip {
+                    continue;
+                }
+                
+                
+                if (sMeetingTime.startTime == nil || sMeetingTime.endTime == nil || tMeetingTime.startTime == nil || tMeetingTime.endTime == nil) {
+                    continue;
+                }
+                
+                if sMeetingTime.startTime!.timeIntervalSince1970 < tMeetingTime.startTime!.timeIntervalSince1970 {
+                    if (sMeetingTime.endTime!.timeIntervalSince1970 > tMeetingTime.endTime!.timeIntervalSince1970) {
+                        return true;
+                    }
+                }
+                
+                if sMeetingTime.startTime!.timeIntervalSince1970 > tMeetingTime.startTime!.timeIntervalSince1970 {
+                    if (sMeetingTime.endTime!.timeIntervalSince1970 < tMeetingTime.endTime!.timeIntervalSince1970) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

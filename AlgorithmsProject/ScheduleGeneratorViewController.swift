@@ -39,6 +39,8 @@ class ScheduleGeneratorViewController: UIViewController, UITableViewDelegate, UI
         self.addClassView.hidden = true;
         self.classTableView.hidden = false;
         self.addClassButton.enabled = true;
+        self.subjectPickerView.hidden = true;
+        self.subjectPickerView.selectRow(0, inComponent: 0, animated: false);
     }
     
     @IBAction func addButtonPressed(sender: UIButton) {
@@ -143,6 +145,17 @@ class ScheduleGeneratorViewController: UIViewController, UITableViewDelegate, UI
     
     private func generateClassFilters() -> [ClassFilter] {
         var filters : [ClassFilter] = []
+        if noFridayClassSwitch.on {
+            filters.append(NoFridayClassFilter)
+        }
+        
+        if noClassBeforeSwitch.on {
+            filters.append(BeforeTimeFilter(nsDate: getDateFromButton(timeBeforeButton)!))
+        }
+        
+        if noClassAfterSwitch.on {
+            filters.append(AfterTimeFilter(nsDate: getDateFromButton(timeAfterButton)!))
+        }
         
         return filters;
     }

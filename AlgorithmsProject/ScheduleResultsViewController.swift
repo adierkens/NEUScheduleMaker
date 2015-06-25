@@ -13,7 +13,10 @@ class ScheduleResultsViewController: UIViewController {
     var pageIndex : Int?
     var pageCount : Int?
     var schedule : Schedule!
+    var classColor : [NEUClassIndex : UIColor]!
+    var classRecognizer : [UITapGestureRecognizer : NEUClass]!
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
@@ -25,6 +28,7 @@ class ScheduleResultsViewController: UIViewController {
         }
         
         if self.schedule != nil {
+            errorLabel.hidden = true;
             loadScheduleView()
         } else {
             schedule = Schedule()
@@ -106,14 +110,13 @@ class ScheduleResultsViewController: UIViewController {
         
         if (self.navigationController != nil) {
             navBarSize = Int(self.navigationController!.navigationBar.frame.size.height)
-            NSLog("Navbar: \(navBarSize)")
             totalHeight -= navBarSize;
         }
         
         var totalWidth : Int = Int(self.view.frame.size.width) - 45;
         var sizeOfHour = ((totalHeight - 10) / 12);
         var firstHour = navBarSize + sizeOfHour - 15;
-
+        classRecognizer = [:]
         
         for cls in schedule.selectedClasses {
             var clsColor = getColorForClass(cls);
@@ -147,7 +150,8 @@ class ScheduleResultsViewController: UIViewController {
                         view.layer.borderWidth = 2;
                         view.layer.cornerRadius = 10;
                         view.addGestureRecognizer(gestureRecognizer);
-                        // view.tag = find(cls, schedule.selectedClasses)
+                        view.tag = find(schedule.selectedClasses, cls)!
+                        classRecognizer[gestureRecognizer] = cls;
                         
                         subViews.append(view);
                     }
@@ -160,6 +164,34 @@ class ScheduleResultsViewController: UIViewController {
     
     func handleClassTap(recognizer: UITapGestureRecognizer) {
         NSLog("Class Tapped")
+        
+        var cls = classRecognizer[recognizer]!;
+        
+        var displayFormatString = "CRN: %s\nInstructor: %s\n";
+        
+        var crn = "CRN: ";
+        if cls.crn != nil {
+            crn += String(cls.crn!)
+        } else {
+            crn += "TBD"
+        }
+        
+        var instr = "Instructor: ";
+        
+        if cls.instructor != nil {
+            instr += cls.instructor!
+        } else {
+            instr += "TBD"
+        }
+        
+        var displayText = crn + "\n" + instr;
+
+        var uiAlertView = UIAlertView(title: cls.title!, message: displayText, delegate: nil, cancelButtonTitle: "Ok");
+
+        uiAlertView.show();
+        
+        NSLog(displayText);
+        
     }
     
     private func getXForDay(day : Day) -> Int {
@@ -194,7 +226,31 @@ class ScheduleResultsViewController: UIViewController {
     }
     
     private func getColorForClass(neuClass : NEUClass) -> UIColor {
-        return UIColor.grayColor();
+
+        var neuCIndex = NEUClassIndex(neuClass: neuClass)
+        
+        if (neuCIndex == nil) {
+            return UIColor.grayColor()
+        }
+        
+        if classColor == nil {
+            classColor = [:]
+        }
+        
+        if classColor[neuCIndex!] != nil {
+            return classColor[NEUClassIndex(neuClass: neuClass)!]!
+        }
+
+        var randomRed:CGFloat = CGFloat(neuClass.crn! % 255) / 255
+        var randomGreen:CGFloat = CGFloat(neuClass.crn! % 255) / 255
+        var randomBlue:CGFloat = CGFloat(neuClass.crn! % 255) / 255
+        
+        // var uiColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+         var uiColor = UIColor(hue: CGFloat(Double(neuClass.crn! % 255) / 255), saturation: 255 as CGFloat, brightness: 255 as CGFloat, alpha: 1.0)
+        
+        classColor[neuCIndex!] = uiColor;
+        return uiColor;
     }
     
 }

@@ -20,6 +20,11 @@ public class Schedule {
     }
     
     func conflicts(neuClass : NEUClass) -> Bool {
+        for cls in selectedClasses {
+            if (cls.conflicts(neuClass)) {
+                return true;
+            }
+        }
         return false;
     }
     
@@ -102,6 +107,7 @@ class ScheduleFinder : SearchResultsHandler {
         }
         
         for neuClass in neuClasses {
+            NSLog(neuClass.toJsonString());
             var shouldAddClass = true;
             for filter in self.classFilters {
                 if !shouldAddClass { continue }
