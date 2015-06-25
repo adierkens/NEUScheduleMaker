@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, ScheduleResultsHandler {
 
-    private var currentPageIndex : Int?;
-    private var allSchedules : [Int]?
+    private var currentPageIndex : Int!;
+    private var allSchedules : [Schedule]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentPageIndex = 0;
-        allSchedules = [1, 2, 3, 4]
-        // Do any additional setup after loading the view.
-        
-        self.setViewControllers([viewControllerAtIndex(0)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
+        allSchedules = []
+                
+        self.setViewControllers([], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
         self.delegate = self
         self.dataSource = self
     }
@@ -32,6 +31,22 @@ class ScheduleResultsPageViewController: UIPageViewController, UIPageViewControl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    func onSchedulesFound(schedules : [Schedule]) {
+        
+    }
+    
+    func newScheduleFound(schedule : Schedule) {
+        NSLog("Adding new schedule")
+        allSchedules!.append(schedule);
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.dataSource = nil;
+            self.dataSource = self;
+            self.setViewControllers([self.viewControllerAtIndex(self.currentPageIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil);
+        });
+        
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {

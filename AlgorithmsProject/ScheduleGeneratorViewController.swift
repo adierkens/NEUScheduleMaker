@@ -134,22 +134,24 @@ class ScheduleGeneratorViewController: UIViewController, UITableViewDelegate, UI
         self.classTableView!.dataSource = self;
         ScheduleGeneratorViewController.dateFormatter.dateFormat = "h:mm a"
         self.classIndexList = []
-        
         self.subjectPickerView.dataSource = self;
         self.subjectPickerView.delegate = self;
         self.subjectPickerView.hidden = true;
         self.addClassView.hidden = true;
         self.searchButton.enabled = false;
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func generateClassFilters() -> [ClassFilter] {
+        var filters : [ClassFilter] = []
+        
+        return filters;
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        var resultsController : ScheduleResultsPageViewController = segue.destinationViewController as! ScheduleResultsPageViewController;
+        var handler = ScheduleFinder(clsIndexes: classIndexList!, filters: generateClassFilters())
+        handler.findMatchingSchedules(resultsController)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

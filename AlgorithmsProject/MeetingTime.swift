@@ -9,10 +9,9 @@
 import Foundation
 
 class MeetingTime {
-    
     var days : [Day]?
-    var startTime : String?
-    var endTime : String?
+    var startTime : NSDate?
+    var endTime : NSDate?
     var type : MeetingTimeType?
     var whr : String?
     var capacity : Int?
@@ -21,13 +20,19 @@ class MeetingTime {
     var roomSize : Int?
     
     init(jsonDict : NSDictionary) {
+        var dateFormatter = NSDateFormatter();
+        dateFormatter.dateFormat = "h:mm a"
         
         if jsonDict["startTime"] != nil {
-            startTime = jsonDict["startTime"] as? String;
+            var startTimeString = jsonDict["startTime"] as? String;
+            startTimeString = startTimeString?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            startTime = dateFormatter.dateFromString(startTimeString!)
         }
         
         if jsonDict["endTime"] != nil {
-            endTime = jsonDict["endTime"] as? String;
+            var endTimeString = jsonDict["endTime"] as? String;
+            endTimeString = endTimeString?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            endTime = dateFormatter.dateFromString(endTimeString!)
         }
         
         if jsonDict["type"] != nil {
