@@ -13,6 +13,7 @@ class SearchResultsViewController: UICollectionViewController, SearchResultsHand
     private let cellReuseID = "SearchCell";
     private lazy var resultsList : [NEUClass] = [];
     
+
     @IBOutlet var searchResultsCollectionView: UICollectionView!
     lazy var data = NSMutableData();
     

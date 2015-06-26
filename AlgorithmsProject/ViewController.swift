@@ -19,7 +19,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var scheduleButton: UIBarButtonItem!
     
-    var subjectEnums : [String] = [];
     var neuSearchClass : NEUClass = NEUClass();
     
     @IBAction func buttonTouched(sender: UIButton) {
@@ -91,8 +90,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        subjectButton.setTitle(subjectEnums[row], forState: UIControlState.Normal);
-        neuSearchClass.subject = Subject(rawValue: subjectEnums[row]);
+        subjectButton.setTitle(subjectStrings![row], forState: UIControlState.Normal);
+        neuSearchClass.subject = Subject(rawValue: subjectStrings![row]);
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -16,4 +16,12 @@ enum Day : String {
     case Friday = "Friday";
     case Saturday = "Saturday";
     case Sunday = "Sunday";
+    
+    func toString() -> String {
+        if self == Day.Thursday {
+            return "R";
+        }
+        
+        return rawValue.substringToIndex(rawValue.startIndex.successor())
+    }
 }

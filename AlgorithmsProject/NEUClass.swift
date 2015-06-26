@@ -89,7 +89,6 @@ public class NEUClass : Equatable {
     }
     
     func toJsonString() -> String {
-        let tmpString : String = self.subject!.rawValue;
         var prefix : String = "";
         
         var jsonString = "{";
