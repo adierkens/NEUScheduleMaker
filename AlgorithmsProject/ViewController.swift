@@ -26,7 +26,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate
         subjectPicker.hidden = false;
     }
     
-    @IBAction func uiTextFieldEditingDidEnd(sender: UITextField) {
+    
+    @IBAction func textFieldChanged(sender: UITextField) {
+        NSLog("Changed");
         sender.text = sender.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet());
         
         var value : String?;
@@ -46,6 +48,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate
         } else if (sender == titleTextField) {
             neuSearchClass.title = value;
         }
+    }
+    
+    @IBAction func uiTextFieldEditingDidEnd(sender: UITextField) {
+
     }
     
     @IBAction func tabGestureWasPressed(sender: UITapGestureRecognizer) {
@@ -97,6 +103,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UITextViewDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "searchResults") {
             let viewController = segue.destinationViewController as! SearchResultsViewController;
+            NSLog(neuSearchClass.toJsonString())
             
             HttpDataHandler.startConnection(viewController, postData: neuSearchClass.toJsonString());
         }

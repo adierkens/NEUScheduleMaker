@@ -102,6 +102,7 @@
                                     <rect key="frame" x="215" y="123" width="122" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="FqH-ip-iOm"/>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="48N-b9-CL7"/>
                                 </connections>
                             </textField>
@@ -116,6 +117,7 @@
                                     <rect key="frame" x="215" y="162" width="122" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="eDk-5T-nwm"/>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="ve0-3Z-5WK"/>
                                 </connections>
                             </textField>
@@ -130,6 +132,7 @@
                                     <rect key="frame" x="215" y="200" width="122" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="bdn-qb-5sF"/>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="3pV-Up-2K4"/>
                                 </connections>
                             </textField>
@@ -144,6 +147,7 @@
                                     <rect key="frame" x="215" y="238" width="122" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="Hkd-YF-CWU"/>
                                     <action selector="uiTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="3gZ-Vi-mcW"/>
                                 </connections>
                             </textField>

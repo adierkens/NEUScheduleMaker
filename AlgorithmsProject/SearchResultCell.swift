@@ -25,7 +25,6 @@ class SearchResultCell: UICollectionViewCell {
 
     func setClass(neuClass : NEUClass) {
         if (neuClass.title != nil) {
-            NSLog(neuClass.title!);
             titleLabel.text = neuClass.title!;
         }
         if (neuClass.crn != nil) {
